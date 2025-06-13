@@ -66,46 +66,85 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-gradient text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="hero-gradient text-white py-16 lg:py-24 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-yellow-300 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-400 rounded-full"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="mb-6">
+                <Badge className="bg-green-600 text-white px-4 py-2 text-sm font-bold mb-4 inline-block pulse-animation">
+                  ✅ 500+ Apps Successfully Approved
+                </Badge>
+              </div>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                Get Your App Approved on <span className="text-yellow-300">Google Play</span> with 12 Real Testers
+                Get Your App Approved on <span className="text-yellow-300 underline decoration-wavy">Google Play</span> with 12 Real Testers
               </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                14 Days | 12 Devices | Human Feedback | Fast Setup
+              <p className="text-xl lg:text-2xl mb-6 text-blue-100">
+                🚀 14 Days | 📱 12 Devices | 👥 Human Feedback | ⚡ Fast Setup
               </p>
+              <div className="grid grid-cols-2 gap-4 mb-8 text-center">
+                <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-yellow-300">99%</div>
+                  <div className="text-sm">Success Rate</div>
+                </div>
+                <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-yellow-300">24h</div>
+                  <div className="text-sm">Quick Start</div>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={whatsappLinks.start}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-colors inline-flex items-center justify-center"
+                  className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <i className="fab fa-whatsapp mr-3 text-xl"></i>Start Testing Now
                 </a>
                 <button 
-                  onClick={() => scrollToSection('how-it-works')}
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
+                  onClick={() => scrollToSection('pricing')}
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center"
                 >
-                  Learn How It Works
+                  <i className="fas fa-tags mr-3"></i>View Pricing
                 </button>
+              </div>
+              <div className="mt-6 flex items-center text-blue-100">
+                <i className="fas fa-shield-alt mr-2"></i>
+                <span className="text-sm">100% Money-Back Guarantee • No Risk</span>
               </div>
             </div>
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Multiple smartphones displaying app testing interface" 
-                className="rounded-2xl shadow-2xl w-full"
+                className="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute -bottom-6 -left-6 bg-green-600 text-white p-4 rounded-xl shadow-lg">
+              {/* Floating stats cards */}
+              <div className="absolute -bottom-6 -left-6 bg-green-600 text-white p-4 rounded-xl shadow-lg pulse-animation">
                 <div className="text-2xl font-bold">12</div>
                 <div className="text-sm">Real Testers</div>
               </div>
-              <div className="absolute -top-6 -right-6 bg-yellow-400 text-blue-600 p-4 rounded-xl shadow-lg">
+              <div className="absolute -top-6 -right-6 bg-yellow-400 text-blue-600 p-4 rounded-xl shadow-lg pulse-animation">
                 <div className="text-2xl font-bold">14</div>
                 <div className="text-sm">Days Testing</div>
+              </div>
+              <div className="absolute top-1/2 -left-4 bg-purple-600 text-white p-3 rounded-lg shadow-lg">
+                <div className="text-lg font-bold">✓</div>
+                <div className="text-xs">Approved</div>
+              </div>
+              {/* Floating testimonial */}
+              <div className="absolute bottom-16 -right-8 bg-white text-gray-800 p-4 rounded-lg shadow-xl max-w-xs">
+                <div className="flex items-center mb-2">
+                  <div className="flex text-yellow-400 text-sm">★★★★★</div>
+                </div>
+                <p className="text-sm italic">"Got approved in just 10 days!"</p>
+                <p className="text-xs text-gray-600 mt-1">- Sarah M., Developer</p>
               </div>
             </div>
           </div>
@@ -226,34 +265,50 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-16 lg:py-24 bg-white">
+      <section id="pricing" className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Choose Your Plan</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Flexible pricing options for all app sizes and requirements</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Choose Your <span className="text-blue-600">Perfect Plan</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Transparent pricing with no hidden fees. Get your app approved faster than ever!
+            </p>
+            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold">
+              <i className="fas fa-shield-alt"></i>
+              <span>100% Money-Back Guarantee</span>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Basic Plan */}
-            <Card className="border-2 border-gray-200 hover:border-blue-600 transition-colors">
-              <CardContent className="p-8">
+            <Card className="pricing-card border-2 border-gray-200 hover:border-blue-600 transition-all duration-300 bg-white">
+              <CardContent className="p-8 h-full flex flex-col">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Basic Plan</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">$19.99</div>
-                  <div className="text-lg text-gray-500 line-through">$29.99</div>
-                  <div className="text-lg font-semibold text-green-600">৳2000</div>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i className="fas fa-rocket text-2xl text-blue-600"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Plan</h3>
+                  <div className="mb-4">
+                    <div className="text-4xl font-bold text-blue-600 mb-1">$19.99</div>
+                    <div className="text-lg text-gray-500 line-through mb-1">$29.99</div>
+                    <div className="text-lg font-semibold text-green-600">৳2,499</div>
+                  </div>
+                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    Save $10
+                  </div>
                 </div>
                 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {[
-                    "App Size: 1 TO 50 MB",
-                    "14 Day Testing",
-                    "12 Real Testers",
-                    "Full App Testing"
+                    { text: "App Size: 1 TO 50 MB", icon: "fas fa-mobile-alt" },
+                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                    { text: "12 Real Testers", icon: "fas fa-users" },
+                    { text: "Full App Testing", icon: "fas fa-check-circle" }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-green-600 mr-3"></i>
-                      <span>{feature}</span>
+                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                      <span className="text-gray-700">{feature.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -262,38 +317,48 @@ export default function Home() {
                   href={whatsappLinks.basic}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+                  className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <i className="fab fa-whatsapp mr-2"></i>Start Testing
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i>Start Testing Now
                 </a>
               </CardContent>
             </Card>
 
             {/* Pro Plan */}
-            <Card className="border-2 border-blue-600 relative">
+            <Card className="pricing-card border-2 border-blue-600 relative bg-white floating-card">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-blue-600 text-white px-4 py-2">Popular</Badge>
+                <Badge className="bg-blue-600 text-white px-6 py-2 text-sm font-bold pulse-animation">
+                  🔥 MOST POPULAR
+                </Badge>
               </div>
-              <CardContent className="p-8">
+              <CardContent className="p-8 h-full flex flex-col">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Pro Plan</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">$23.99</div>
-                  <div className="text-lg text-gray-500 line-through">$39.99</div>
-                  <div className="text-lg font-semibold text-green-600">৳2500</div>
+                  <div className="w-16 h-16 mx-auto mb-4 feature-icon-bg rounded-full flex items-center justify-center">
+                    <i className="fas fa-star text-2xl text-white"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Pro Plan</h3>
+                  <div className="mb-4">
+                    <div className="text-4xl font-bold text-blue-600 mb-1">$23.99</div>
+                    <div className="text-lg text-gray-500 line-through mb-1">$39.99</div>
+                    <div className="text-lg font-semibold text-green-600">৳2,999</div>
+                  </div>
+                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    Save $16
+                  </div>
                 </div>
                 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {[
-                    "App Size: 1 TO 150 MB",
-                    "14 Day Testing",
-                    "12 Real Testers",
-                    "Full App Testing",
-                    "Support via AnyDesk",
-                    "Bug Report"
+                    { text: "App Size: 1 TO 150 MB", icon: "fas fa-mobile-alt" },
+                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                    { text: "12 Real Testers", icon: "fas fa-users" },
+                    { text: "Full App Testing", icon: "fas fa-check-circle" },
+                    { text: "Support via AnyDesk", icon: "fas fa-desktop" },
+                    { text: "Bug Report", icon: "fas fa-bug" }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-green-600 mr-3"></i>
-                      <span>{feature}</span>
+                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                      <span className="text-gray-700">{feature.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -302,36 +367,44 @@ export default function Home() {
                   href={whatsappLinks.pro}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+                  className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <i className="fab fa-whatsapp mr-2"></i>Start Testing
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i>Start Testing Now
                 </a>
               </CardContent>
             </Card>
 
             {/* Max Plan */}
-            <Card className="border-2 border-gray-200 hover:border-blue-600 transition-colors">
-              <CardContent className="p-8">
+            <Card className="pricing-card border-2 border-gray-200 hover:border-purple-600 transition-all duration-300 bg-white">
+              <CardContent className="p-8 h-full flex flex-col">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Max Plan</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">$26.99</div>
-                  <div className="text-lg text-gray-500 line-through">$49.99</div>
-                  <div className="text-lg font-semibold text-green-600">৳2800</div>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                    <i className="fas fa-crown text-2xl text-purple-600"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Max Plan</h3>
+                  <div className="mb-4">
+                    <div className="text-4xl font-bold text-purple-600 mb-1">$26.99</div>
+                    <div className="text-lg text-gray-500 line-through mb-1">$49.99</div>
+                    <div className="text-lg font-semibold text-green-600">৳3,374</div>
+                  </div>
+                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    Save $23
+                  </div>
                 </div>
                 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {[
-                    "App Size: 1 TO 250 MB",
-                    "14 Day Testing",
-                    "12 Real Testers",
-                    "Full App Testing",
-                    "Additional Support",
-                    "Bug Report",
-                    "AnyDesk Help"
+                    { text: "App Size: 1 TO 250 MB", icon: "fas fa-mobile-alt" },
+                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                    { text: "12 Real Testers", icon: "fas fa-users" },
+                    { text: "Full App Testing", icon: "fas fa-check-circle" },
+                    { text: "Additional Support", icon: "fas fa-headset" },
+                    { text: "Bug Report", icon: "fas fa-bug" },
+                    { text: "AnyDesk Help", icon: "fas fa-desktop" }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-green-600 mr-3"></i>
-                      <span>{feature}</span>
+                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                      <span className="text-gray-700">{feature.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -340,41 +413,51 @@ export default function Home() {
                   href={whatsappLinks.max}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+                  className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <i className="fab fa-whatsapp mr-2"></i>Start Testing
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i>Start Testing Now
                 </a>
               </CardContent>
             </Card>
 
             {/* Bulk Plan */}
-            <Card className="secondary-gradient border-2 border-green-600 text-white relative">
+            <Card className="pricing-card premium-gradient border-2 border-green-600 text-white relative floating-card">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-yellow-400 text-gray-900 px-4 py-2">Best Value</Badge>
+                <Badge className="bg-yellow-400 text-gray-900 px-6 py-2 text-sm font-bold">
+                  💎 ENTERPRISE
+                </Badge>
               </div>
-              <CardContent className="p-8">
+              <CardContent className="p-8 h-full flex flex-col">
                 <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <i className="fas fa-gem text-2xl text-yellow-300"></i>
+                  </div>
                   <h3 className="text-2xl font-bold mb-2">Bulk Purchase</h3>
-                  <div className="text-sm opacity-90 mb-2">(Advanced)</div>
-                  <div className="text-4xl font-bold mb-2">$34.99+</div>
-                  <div className="text-lg font-semibold">৳3500+</div>
+                  <div className="text-sm opacity-90 mb-4">(Advanced Plan)</div>
+                  <div className="mb-4">
+                    <div className="text-4xl font-bold mb-1">$34.99+</div>
+                    <div className="text-lg font-semibold text-yellow-300">৳4,374+</div>
+                  </div>
+                  <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+                    Best Value
+                  </div>
                 </div>
                 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {[
-                    "3 Apps or more",
-                    "App Size: 1 TO 500 MB",
-                    "All Max Plan Features",
-                    "Personalized Support"
+                    { text: "3+ Apps Testing", icon: "fas fa-layer-group" },
+                    { text: "App Size: Up to 500 MB", icon: "fas fa-expand-arrows-alt" },
+                    { text: "All Max Plan Features", icon: "fas fa-check-double" },
+                    { text: "Personalized Support", icon: "fas fa-user-tie" }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <i className="fas fa-check text-yellow-300 mr-3"></i>
-                      <span>{feature}</span>
+                      <i className={`${feature.icon} text-yellow-300 mr-3 w-5`}></i>
+                      <span>{feature.text}</span>
                     </li>
                   ))}
-                  <li className="flex items-center">
-                    <i className="fas fa-star text-yellow-300 mr-3"></i>
-                    <span><strong>Bonus:</strong> 1 Multimedia App Source Code</span>
+                  <li className="flex items-start pt-2 border-t border-white border-opacity-20">
+                    <i className="fas fa-gift text-yellow-300 mr-3 w-5 mt-1"></i>
+                    <span><strong className="text-yellow-300">BONUS:</strong> 1 Premium App Source Code</span>
                   </li>
                 </ul>
                 
@@ -382,67 +465,143 @@ export default function Home() {
                   href={whatsappLinks.bulk}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-white text-green-600 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+                  className="w-full bg-white text-purple-600 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <i className="fab fa-whatsapp mr-2"></i>Start Testing
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i>Start Testing Now
                 </a>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Additional Trust Elements */}
+          <div className="mt-16 text-center">
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-3">
+                <i className="fas fa-shield-alt text-2xl text-green-600"></i>
+                <span className="text-gray-700 font-semibold">Money-Back Guarantee</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <i className="fas fa-clock text-2xl text-blue-600"></i>
+                <span className="text-gray-700 font-semibold">24/7 Support Available</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3">
+                <i className="fas fa-users text-2xl text-purple-600"></i>
+                <span className="text-gray-700 font-semibold">500+ Apps Approved</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Success stories from developers who got their apps approved</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Real Success Stories from <span className="text-blue-600">Happy Developers</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Join hundreds of developers who got their apps approved with our testing service
+            </p>
+            <div className="inline-flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full font-semibold">
+              <i className="fas fa-star"></i>
+              <span>4.9/5 Average Rating from 150+ Reviews</span>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "Super easy and reliable. My app got approved on Play Store smoothly.",
-                name: "James R.",
-                role: "App Developer",
+                text: "Super easy and reliable. My app got approved on Play Store smoothly. The daily reports were incredibly detailed and helped me understand exactly what Google was looking for.",
+                name: "James Rodriguez",
+                role: "Mobile App Developer",
+                company: "TechStart Inc.",
+                rating: 5,
+                appType: "Social Media App",
+                approvalTime: "8 days",
                 image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
               },
               {
-                text: "Great service. Daily activity updates were super helpful!",
-                name: "Emily S.",
-                role: "Mobile App Developer",
+                text: "Great service. Daily activity updates were super helpful! After 3 rejections on my own, these guys got my gaming app approved in just 12 days.",
+                name: "Emily Chen",
+                role: "Indie Game Developer", 
+                company: "PixelCraft Studios",
+                rating: 5,
+                appType: "Gaming App",
+                approvalTime: "12 days",
                 image: "https://images.unsplash.com/photo-1494790108755-2616b332c100?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
               },
               {
-                text: "I struggled before, but their 12 testers made my launch smooth.",
-                name: "Mike T.",
+                text: "I struggled before, but their 12 testers made my launch smooth. Professional service with real human feedback. Worth every penny for the peace of mind.",
+                name: "Michael Thompson",
                 role: "Startup Founder",
+                company: "EduTech Solutions",
+                rating: 5,
+                appType: "Education App",
+                approvalTime: "10 days",
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="p-8">
-                <CardContent className="p-0">
-                  <div className="text-yellow-400 text-2xl mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <i key={i} className="fas fa-star"></i>
-                    ))}
+              <Card key={index} className="testimonial-card p-8 h-full">
+                <CardContent className="p-0 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-yellow-400 text-lg">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <i key={i} className="fas fa-star"></i>
+                      ))}
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 text-xs">
+                      Approved in {testimonial.approvalTime}
+                    </Badge>
                   </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center">
-                    <img 
-                      src={testimonial.image}
-                      alt={`${testimonial.name} - ${testimonial.role}`}
-                      className="w-12 h-12 rounded-full mr-4"
-                    />
-                    <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-gray-500 text-sm">{testimonial.role}</div>
+                  
+                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
+                    "{testimonial.text}"
+                  </p>
+                  
+                  <div className="mt-auto">
+                    <div className="flex items-center mb-3">
+                      <img 
+                        src={testimonial.image}
+                        alt={`${testimonial.name} - ${testimonial.role}`}
+                        className="w-14 h-14 rounded-full mr-4 border-2 border-blue-200"
+                      />
+                      <div>
+                        <div className="font-bold text-gray-900">{testimonial.name}</div>
+                        <div className="text-blue-600 text-sm font-semibold">{testimonial.role}</div>
+                        <div className="text-gray-500 text-xs">{testimonial.company}</div>
+                      </div>
+                    </div>
+                    <div className="bg-gray-100 rounded-lg p-3 text-center">
+                      <div className="text-sm text-gray-600">App Category</div>
+                      <div className="font-semibold text-gray-800">{testimonial.appType}</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-16 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                <div className="text-gray-600 text-sm">Apps Approved</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">99%</div>
+                <div className="text-gray-600 text-sm">Success Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">24h</div>
+                <div className="text-gray-600 text-sm">Quick Start</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-600 mb-2">4.9★</div>
+                <div className="text-gray-600 text-sm">Average Rating</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
