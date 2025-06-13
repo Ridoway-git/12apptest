@@ -606,6 +606,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Urgency Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-red-500 to-pink-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-20"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="mb-8">
+            <Badge className="bg-yellow-400 text-red-600 px-6 py-3 text-lg font-bold pulse-animation mb-6 inline-block">
+              ⚠️ LIMITED TIME OFFER
+            </Badge>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+              Don't Let Google Reject Your App Again!
+            </h2>
+            <p className="text-xl lg:text-2xl mb-8 text-red-100">
+              Every day you wait, your competitors get ahead. Get approved NOW with our proven system.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+              <div className="text-3xl mb-2">⏰</div>
+              <div className="font-bold text-lg mb-2">Time is Money</div>
+              <div className="text-red-100 text-sm">Each rejection costs you weeks of development time</div>
+            </div>
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+              <div className="text-3xl mb-2">📉</div>
+              <div className="font-bold text-lg mb-2">Revenue Loss</div>
+              <div className="text-red-100 text-sm">Delayed launch = Lost users and revenue</div>
+            </div>
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+              <div className="text-3xl mb-2">🎯</div>
+              <div className="font-bold text-lg mb-2">99% Success Rate</div>
+              <div className="text-red-100 text-sm">Why risk it when we guarantee approval?</div>
+            </div>
+          </div>
+          
+          <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl p-8 text-gray-900 mb-8">
+            <h3 className="text-2xl font-bold mb-4 text-red-600">🔥 Special Launch Discount</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div>
+                <div className="text-4xl font-bold text-green-600 mb-2">Save up to $23</div>
+                <div className="text-gray-600">On all plans - Limited time only</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">48hr</div>
+                <div className="text-gray-600">Express service available</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href={whatsappLinks.start}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <i className="fab fa-whatsapp mr-3 text-xl"></i>Get Started NOW - Don't Wait!
+            </a>
+            <button 
+              onClick={() => scrollToSection('pricing')}
+              className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center"
+            >
+              <i className="fas fa-flash mr-3"></i>View Limited Offers
+            </button>
+          </div>
+          
+          <div className="mt-6 text-red-100">
+            <i className="fas fa-clock mr-2"></i>
+            <span className="text-sm">Offer expires soon - Secure your spot today!</span>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="py-16 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
