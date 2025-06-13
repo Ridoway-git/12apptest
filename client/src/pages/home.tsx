@@ -788,53 +788,108 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Free PDF Lead Magnet Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="text-6xl mb-6">🎁</div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              FREE PDF Guide: 7 Reasons Apps Get Rejected on Play Store
+            </h2>
+            <p className="text-xl mb-8 text-purple-100">
+              Learn the insider secrets to avoid common rejection reasons and get your app approved faster!
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-3xl mb-2">📋</div>
+                <div className="font-semibold">Complete Checklist</div>
+                <div className="text-purple-200 text-sm">Pre-submission guide</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-2">🛠️</div>
+                <div className="font-semibold">Fix Common Issues</div>
+                <div className="text-purple-200 text-sm">Step-by-step solutions</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-2">⚡</div>
+                <div className="font-semibold">Quick Approval Tips</div>
+                <div className="text-purple-200 text-sm">Expert strategies</div>
+              </div>
+            </div>
+            
+            <a 
+              href={whatsappLinks.general}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-300 transition-colors inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <i className="fas fa-download mr-3"></i>Get FREE PDF Guide Now
+            </a>
+            <p className="text-purple-200 text-sm mt-4">No spam, just valuable insights to help your app succeed!</p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 lg:py-24 hero-gradient text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 text-blue-100">Support available 24/7. We're always here to help.</p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">Ready to Get Your App Approved?</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Join 500+ successful developers who got their apps approved with our professional testing service.
+              24/7 support available - We're always here to help you succeed!
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <i className="fab fa-whatsapp text-4xl mb-4"></i>
-                <h3 className="text-xl font-semibold mb-4">WhatsApp</h3>
-                <p className="mb-4 text-blue-100">Get instant support and place orders</p>
+                <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fab fa-whatsapp text-2xl"></i>
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">WhatsApp Support</h3>
+                <p className="mb-6 text-blue-100">Get instant support, place orders, and track your testing progress</p>
                 <a 
                   href={whatsappLinks.help}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors inline-flex items-center"
+                  className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors inline-flex items-center justify-center w-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
-                  <i className="fab fa-whatsapp mr-2"></i>+8801845978534
+                  <i className="fab fa-whatsapp mr-3 text-xl"></i>Chat Now: +8801845978534
                 </a>
               </CardContent>
             </Card>
             
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
               <CardContent className="p-8 text-center">
-                <i className="fas fa-envelope text-4xl mb-4"></i>
-                <h3 className="text-xl font-semibold mb-4">Email</h3>
-                <p className="mb-4 text-blue-100">Send us detailed inquiries</p>
+                <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-envelope text-2xl"></i>
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Email Support</h3>
+                <p className="mb-6 text-blue-100">Send detailed inquiries, technical questions, or bulk order requests</p>
                 <a 
                   href="mailto:contact@codelagbe.store" 
-                  className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center w-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
-                  <i className="fas fa-envelope mr-2"></i>contact@codelagbe.store
+                  <i className="fas fa-envelope mr-3"></i>contact@codelagbe.store
                 </a>
               </CardContent>
             </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-mobile-alt text-2xl text-gray-900"></i>
+                </div>
+                <h3 className="text-2xl font-semibold mb-4">Quick Payment</h3>
+                <p className="mb-6 text-blue-100">Fast and secure bKash payments. Get started within minutes!</p>
+                <div className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
+                  <i className="fas fa-credit-card mr-3"></i>bKash: 01845978534
+                </div>
+              </CardContent>
+            </Card>
           </div>
-          
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-semibold mb-4">Payment Information</h3>
-              <p className="text-blue-100 mb-4">We accept bKash Personal for quick and secure payments</p>
-              <div className="text-lg font-semibold">
-                <i className="fas fa-mobile-alt mr-2"></i>bKash: 01845978534
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -905,6 +960,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky WhatsApp Button */}
+      <a
+        href={whatsappLinks.help}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50 pulse-animation"
+        aria-label="WhatsApp Support"
+      >
+        <i className="fab fa-whatsapp text-2xl"></i>
+      </a>
     </div>
   );
 }

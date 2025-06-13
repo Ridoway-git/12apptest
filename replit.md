@@ -91,9 +91,24 @@ This is a single-page React application built with Vite for a mobile app testing
 
 ## Changelog
 
-Changelog:
-- June 13, 2025. Initial setup
+- June 13, 2025: Initial setup of 12 App Testers landing page
+- June 13, 2025: Major design improvements and UX enhancements:
+  * Added helpful top alert bar for Google Play requirements
+  * Enhanced hero section with success stats and floating testimonials
+  * Added "As Trusted By" section with community logos
+  * Improved pricing section with value messaging and better CTAs
+  * Updated BDT pricing rates (1 USD = 125 BDT)
+  * Redesigned testimonials without profile images
+  * Added urgency section for conversion optimization
+  * Created free PDF lead magnet section
+  * Enhanced contact section with better layout
+  * Added sticky WhatsApp button for mobile users
+  * Implemented mobile-responsive footer design
+  * Added animations and hover effects throughout
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language
+- Currency conversion rate: 1 USD = 125 BDT
+- Focus on conversion optimization and professional design
+- Emphasis on trust indicators and social proof elements
