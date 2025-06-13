@@ -1,0 +1,147 @@
+Build a professional, mobile-friendly, fast-loading, and SEO-optimized single-page website for a service called **12 App Testers** at the subdomain: **12apptesters.codelagbe.store**.
+
+---
+
+### 🎯 Goal:
+Sell a closed app testing service using 12 real human testers for 14 days to help apps get approved on the Google Play Store.
+
+---
+
+### 🧠 SEO Strategy:
+Optimize for keywords:
+- Google Play closed testing
+- 12 real testers service
+- Android app test service
+- App Play Store approval service
+- Play Store app testing 14 days
+
+Use proper H1, H2 structure, meta tags, alt text for images, structured data (JSON-LD for `Product`), fast loading (no heavy scripts), Open Graph tags for social media.
+
+---
+
+### 🌍 Site Language: English  
+### 🌐 Domain/Subdomain: 12apptesters.codelagbe.store  
+### 💬 WhatsApp: +8801845978534  
+### 📧 Email: contact@codelagbe.store  
+### 💳 Payment Method: bKash Personal (01845978534)  
+### 💰 Pricing Options: USD and BDT shown together.
+
+---
+
+### 🔽 Sections to Include:
+
+#### 1. Hero Section
+- Title: "Get Your App Approved on Google Play with 12 Real Testers"
+- Subtitle: "14 Days | 12 Devices | Human Feedback | Fast Setup"
+- CTA Button: “Start Testing Now” (opens WhatsApp with pre-filled message)
+
+#### 2. How It Works (4-step process)
+1. Place Order (Pay via bKash)
+2. Get Tester Emails
+3. Submit Closed Testing Link
+4. App Gets Approved
+
+#### 3. Why Choose Us
+- 12 Real Human Testers
+- 14-Day Full Testing (all app pages tested daily)
+- Daily Reports
+- Device Compatibility Check
+- 100% Manual Testing
+- Money-Back Guarantee (if test not completed properly)
+
+#### 4. Pricing Table (Add the following four plans)
+
+##### ➤ Basic Plan
+- App Size: 1 TO 50 MB
+- 14 Day Testing
+- 12 Real Testers
+- Full App Testing  
+💵 **$19.99** (was $29.99)
+
+##### ➤ Pro Plan
+- App Size: 1 TO 150 MB
+- 14 Day Testing
+- 12 Real Testers
+- Full App Testing
+- Support via AnyDesk
+- Bug Report  
+💵 **$23.99** (was $39.99)
+
+##### ➤ Max Plan
+- App Size: 1 TO 250 MB
+- 14 Day Testing
+- 12 Real Testers
+- Full App Testing
+- Additional Support
+- Bug Report
+- AnyDesk Help  
+💵 **$26.99** (was $49.99)
+
+##### ➤ Bulk Purchase (Advanced)
+- 3 Apps or more
+- App Size: 1 TO 500 MB
+- All Max Plan Features
+- Personalized Support
+- Bonus: 1 Multimedia App Source Code  
+💵 **Starting from $34.99**
+
+> Below each plan, add “Start Testing” button linking to WhatsApp chat with pre-filled message like: “Hi, I want to purchase the Pro Plan for app testing.”
+
+Also show the BDT equivalent prices:
+- Basic: ৳2000  
+- Pro: ৳2500  
+- Max: ৳2800  
+- Bulk: ৳3500+
+
+---
+
+#### 5. Testimonials (Add 3)
+Short 1–2 sentence feedbacks from fictional happy clients:
+- “Super easy and reliable. My app got approved on Play Store smoothly.” – James R.
+- “Great service. Daily activity updates were super helpful!” – Emily S.
+- “I struggled before, but their 12 testers made my launch smooth.” – Mike T.
+
+---
+
+#### 6. FAQ
+Include 5–6 of the most relevant questions:
+- Are the testers real people?
+- What if my app is rejected?
+- How long before testing starts?
+- Will testers use emulators?
+- Do I get refund if something goes wrong?
+
+---
+
+#### 7. Contact & Support
+- WhatsApp link
+- Email
+- Text: “Support available 24/7. We're always here to help.”
+
+---
+
+#### 8. Footer
+- “12AppTesters is an independent third-party service. We are not affiliated with Google LLC.”
+- Quick links: Terms & Conditions, Privacy Policy, About
+- Social icons (optional): Facebook, YouTube, LinkedIn
+
+---
+
+### 🛠 Tech Stack:
+- HTML5, TailwindCSS, Vanilla JS
+- No backend required
+- Use WhatsApp for order handling
+- Use `meta`, `og:title`, `og:description`, `schema.org/Product`
+
+---
+
+### 💡 Meta SEO:
+- `<title>`: 12 App Testers – Get Your App Google Play Approved with Real Testers
+- `<meta name="description">`: Pass Google Play's closed testing easily. Test your app with 12 real Android users for 14 days. Simple, fast, and reliable testing service.
+- OG image: Use a professional banner showing mobile phones and “12 Testers – 14 Days Testing”
+
+---
+
+Design with strong color contrast. Use deep blue, white, and green (for the Bulk Plan). Make it clean, persuasive, responsive.
+
+Everything should be easy to manage, mobile-first, and super fast.
