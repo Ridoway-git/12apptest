@@ -22,955 +22,941 @@ export default function Home() {
   const whatsappLinks = {
     general: `${whatsappBase}?text=Hi,%20I%20want%20to%20know%20more%20about%20your%20app%20testing%20service`,
     start: `${whatsappBase}?text=Hi,%20I%20want%20to%20start%20testing%20my%20app%20now`,
-    basic: `${whatsappBase}?text=Hi,%20I%20want%20to%20purchase%20the%20Basic%20Plan%20for%20app%20testing.`,
-    pro: `${whatsappBase}?text=Hi,%20I%20want%20to%20purchase%20the%20Pro%20Plan%20for%20app%20testing.`,
-    max: `${whatsappBase}?text=Hi,%20I%20want%20to%20purchase%20the%20Max%20Plan%20for%20app%20testing.`,
-    bulk: `${whatsappBase}?text=Hi,%20I%20want%20to%20purchase%20the%20Bulk%20Purchase%20plan%20for%20app%20testing.`,
+    basic: "https://stores.codelagbe.store/product/basic-plan/",
+    pro: "https://stores.codelagbe.store/product/pro-plan/",
+    max: "https://stores.codelagbe.store/product/max-plan/",
+    bulk: "https://stores.codelagbe.store/product/bulk-purchase/",
     help: `${whatsappBase}?text=Hi,%20I%20need%20help%20with%20app%20testing%20service`
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Top Alert Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2">
-          <i className="fas fa-info-circle"></i>
-          <span>⚠️ Only accepting apps already uploaded to Google Play for Closed Testing.</span>
-          <a 
-            href={whatsappLinks.help}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-blue-200 ml-2"
-          >
-            Need help uploading? Contact us.
-          </a>
-        </div>
-      </div>
+  // Standard button classes
+  const buttonBaseClasses = "inline-flex items-center justify-center font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 focus:outline-none focus:ring-4";
 
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
-              <i className="fas fa-mobile-alt text-2xl text-blue-600"></i>
-              <h1 className="text-2xl font-bold text-blue-600">12 App Testers</h1>
+  return (
+    <>
+      <div className="min-h-screen bg-gray-50">
+        {/* Top Alert Bar */}
+        <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm">
+          <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2">
+            <i className="fas fa-info-circle"></i>
+            <span>⚠️ Only accepting apps already uploaded to Google Play for Closed Testing.</span>
+            <a 
+              href={whatsappLinks.help}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-blue-200 ml-2"
+            >
+              Need help uploading? Contact us.
+            </a>
+          </div>
+        </div>
+
+        {/* Header */}
+        <header className="bg-white shadow-sm sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
+              <div className="flex items-center space-x-2">
+                <i className="fas fa-mobile-alt text-2xl text-blue-600"></i>
+                <h1 className="text-2xl font-bold text-blue-600">12 App Testers</h1>
+              </div>
+              <div className="hidden sm:flex items-center space-x-6">
+                <button 
+                  onClick={() => scrollToSection('pricing')}
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  Pricing
+                </button>
+                <button 
+                  onClick={() => scrollToSection('faq')}
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  FAQ
+                </button>
+                <a 
+                  href={whatsappLinks.general}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Contact
+                </a>
+              </div>
             </div>
-            <div className="hidden sm:flex items-center space-x-6">
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="hero-gradient text-white py-16 lg:py-24 relative overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full"></div>
+            <div className="absolute bottom-20 right-10 w-24 h-24 bg-yellow-300 rounded-full"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-400 rounded-full"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="mb-6">
+                  <Badge className="bg-green-600 text-white px-4 py-2 text-sm font-bold mb-4 inline-block pulse-animation">
+                    ✅ 500+ Apps Successfully Approved
+                  </Badge>
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                  ✅ Get Approved on <span className="text-yellow-300 underline decoration-wavy">Google Play</span> — 14 Days of Real Human Testing with 12 Devices
+                </h1>
+                <p className="text-xl lg:text-2xl mb-6 text-blue-100">
+                  🚀 14 Days | 📱 12 Devices | 👥 Human Feedback | ⚡ Fast Setup
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-8 text-center">
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-yellow-300">99%</div>
+                    <div className="text-sm">Success Rate</div>
+                  </div>
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-yellow-300">24h</div>
+                    <div className="text-sm">Quick Start</div>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href={whatsappLinks.start}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-green-600 via-green-500 to-green-700 text-white hover:from-green-700 hover:to-green-800 focus:ring-green-500/50`}
+                  >
+                    Get Started NOW - Don't Wait!
+                  </a>
+                  <button 
+                    onClick={() => scrollToSection('pricing')}
+                    className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center"
+                  >
+                    <i className="fas fa-tags mr-3"></i>View Pricing
+                  </button>
+                </div>
+                <div className="mt-6 flex items-center text-blue-100">
+                  <i className="fas fa-shield-alt mr-2"></i>
+                  <span className="text-sm">100% Money-Back Guarantee • No Risk</span>
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                  alt="Multiple smartphones displaying app testing interface" 
+                  className="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-300"
+                />
+                {/* Floating stats cards */}
+                <div className="absolute -bottom-6 -left-6 bg-green-600 text-white p-4 rounded-xl shadow-lg pulse-animation">
+                  <div className="text-2xl font-bold">12</div>
+                  <div className="text-sm">Real Testers</div>
+                </div>
+                <div className="absolute -top-6 -right-6 bg-yellow-400 text-blue-600 p-4 rounded-xl shadow-lg pulse-animation">
+                  <div className="text-2xl font-bold">14</div>
+                  <div className="text-sm">Days Testing</div>
+                </div>
+                <div className="absolute top-1/2 -left-4 bg-purple-600 text-white p-3 rounded-lg shadow-lg">
+                  <div className="text-lg font-bold">✓</div>
+                  <div className="text-xs">Approved</div>
+                </div>
+                {/* Floating testimonial */}
+                <div className="absolute bottom-16 -right-8 bg-white text-gray-800 p-4 rounded-lg shadow-xl max-w-xs">
+                  <div className="flex items-center mb-2">
+                    <div className="flex text-yellow-400 text-sm">★★★★★</div>
+                  </div>
+                  <p className="text-sm italic">"Got approved in just 10 days!"</p>
+                  <p className="text-xs text-gray-600 mt-1">- Sarah M., Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* As Trusted By Section */}
+        <section className="py-12 bg-white border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <p className="text-gray-600 font-semibold mb-6">As Trusted By Leading App Development Communities</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+                <div className="flex items-center justify-center">
+                  <div className="bg-gray-100 rounded-lg px-6 py-3">
+                    <span className="text-gray-700 font-semibold">📱 AppReviewers.net</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="bg-gray-100 rounded-lg px-6 py-3">
+                    <span className="text-gray-700 font-semibold">⚡ DevStack</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="bg-gray-100 rounded-lg px-6 py-3">
+                    <span className="text-gray-700 font-semibold">🚀 PlayBetaHub</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="bg-gray-100 rounded-lg px-6 py-3">
+                    <span className="text-gray-700 font-semibold">📲 TestMyApp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">How It Works</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">Simple 4-step process to get your app approved on Google Play Store</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  step: 1,
+                  title: "Place Order",
+                  description: "Pay via bKash and choose your testing plan",
+                  icon: "fas fa-credit-card",
+                  color: "bg-blue-600"
+                },
+                {
+                  step: 2,
+                  title: "Get Tester Emails",
+                  description: "Receive 12 real tester email addresses",
+                  icon: "fas fa-envelope",
+                  color: "bg-blue-600"
+                },
+                {
+                  step: 3,
+                  title: "Submit Testing Link",
+                  description: "Share your closed testing link with us",
+                  icon: "fas fa-link",
+                  color: "bg-blue-600"
+                },
+                {
+                  step: 4,
+                  title: "App Gets Approved",
+                  description: "Your app passes Google Play requirements",
+                  icon: "fas fa-check-circle",
+                  color: "bg-green-600"
+                }
+              ].map((item) => (
+                <div key={item.step} className="text-center group">
+                  <div className={`${item.color} text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <i className={`${item.icon} text-3xl ${item.step === 4 ? 'text-green-600' : 'text-blue-600'}`}></i>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">The most reliable app testing service for Google Play Store approval</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "fas fa-users",
+                  title: "12 Real Human Testers",
+                  description: "Genuine users with real devices, not bots or emulators",
+                  color: "text-blue-600"
+                },
+                {
+                  icon: "fas fa-calendar-alt",
+                  title: "14-Day Full Testing",
+                  description: "All app pages tested daily for complete coverage",
+                  color: "text-blue-600"
+                },
+                {
+                  icon: "fas fa-chart-line",
+                  title: "Daily Reports",
+                  description: "Receive progress updates and testing activity reports",
+                  color: "text-blue-600"
+                },
+                {
+                  icon: "fas fa-mobile-alt",
+                  title: "Device Compatibility",
+                  description: "Testing across multiple Android devices and versions",
+                  color: "text-blue-600"
+                },
+                {
+                  icon: "fas fa-hand-paper",
+                  title: "100% Manual Testing",
+                  description: "No automation - real human interaction with your app",
+                  color: "text-blue-600"
+                },
+                {
+                  icon: "fas fa-money-bill-wave",
+                  title: "Money-Back Guarantee",
+                  description: "Full refund if testing is not completed properly",
+                  color: "text-green-600"
+                }
+              ].map((feature, index) => (
+                <Card key={index} className="p-8 hover:shadow-xl transition-shadow">
+                  <CardContent className="p-0">
+                    <div className={`${feature.color} text-4xl mb-4`}>
+                      <i className={feature.icon}></i>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Choose Your <span className="text-blue-600">Perfect Plan</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+                Transparent pricing with no hidden fees. Get your app approved faster than ever!
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold">
+                  <i className="fas fa-shield-alt"></i>
+                  <span>100% Money-Back Guarantee</span>
+                </div>
+                <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-semibold">
+                  <i className="fas fa-tags"></i>
+                  <span>💸 Save up to 50% vs Other Services</span>
+                </div>
+                <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-800 px-6 py-3 rounded-full font-semibold">
+                  <i className="fas fa-ban"></i>
+                  <span>No Hidden Monthly Fees</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Basic Plan */}
+              <Card className="pricing-card border-2 border-gray-200 hover:border-blue-600 transition-all duration-300 bg-white">
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className="text-center mb-8">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                      <i className="fas fa-rocket text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Plan</h3>
+                    <div className="mb-4">
+                      <div className="text-4xl font-bold text-blue-600 mb-1">$19.99</div>
+                      <div className="text-lg text-gray-500 line-through mb-1">$29.99</div>
+                      <div className="text-lg font-semibold text-green-600">৳2,499</div>
+                    </div>
+                    <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                      Save $10
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {[
+                      { text: "App Size: 1 TO 50 MB", icon: "fas fa-mobile-alt" },
+                      { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                      { text: "12 Real Testers", icon: "fas fa-users" },
+                      { text: "Full App Testing", icon: "fas fa-check-circle" }
+                    ].map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                        <span className="text-gray-700">{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href={whatsappLinks.basic}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500/50`}
+                  >
+                    🔍 I Want This Plan
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Pro Plan */}
+              <Card className="pricing-card border-2 border-blue-600 relative bg-white floating-card">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-blue-600 text-white px-6 py-2 text-sm font-bold pulse-animation">
+                    🔥 MOST POPULAR
+                  </Badge>
+                </div>
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className="text-center mb-8">
+                    <div className="w-16 h-16 mx-auto mb-4 feature-icon-bg rounded-full flex items-center justify-center">
+                      <i className="fas fa-star text-2xl text-white"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Pro Plan</h3>
+                    <div className="mb-4">
+                      <div className="text-4xl font-bold text-blue-600 mb-1">$23.99</div>
+                      <div className="text-lg text-gray-500 line-through mb-1">$39.99</div>
+                      <div className="text-lg font-semibold text-green-600">৳2,999</div>
+                    </div>
+                    <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                      Save $16
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {[
+                      { text: "App Size: 1 TO 150 MB", icon: "fas fa-mobile-alt" },
+                      { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                      { text: "12 Real Testers", icon: "fas fa-users" },
+                      { text: "Full App Testing", icon: "fas fa-check-circle" },
+                      { text: "Support via AnyDesk", icon: "fas fa-desktop" },
+                      { text: "Bug Report", icon: "fas fa-bug" }
+                    ].map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                        <span className="text-gray-700">{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href={whatsappLinks.pro}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 focus:ring-purple-500/50`}
+                  >
+                    🚀 Get 14-Day Testing Now
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Max Plan */}
+              <Card className="pricing-card border-2 border-gray-200 hover:border-purple-600 transition-all duration-300 bg-white">
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className="text-center mb-8">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                      <i className="fas fa-crown text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Max Plan</h3>
+                    <div className="mb-4">
+                      <div className="text-4xl font-bold text-purple-600 mb-1">$26.99</div>
+                      <div className="text-lg text-gray-500 line-through mb-1">$49.99</div>
+                      <div className="text-lg font-semibold text-green-600">৳3,374</div>
+                    </div>
+                    <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                      Save $23
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {[
+                      { text: "App Size: 1 TO 250 MB", icon: "fas fa-mobile-alt" },
+                      { text: "14 Day Testing", icon: "fas fa-calendar-check" },
+                      { text: "12 Real Testers", icon: "fas fa-users" },
+                      { text: "Full App Testing", icon: "fas fa-check-circle" },
+                      { text: "Additional Support", icon: "fas fa-headset" },
+                      { text: "Bug Report", icon: "fas fa-bug" },
+                      { text: "AnyDesk Help", icon: "fas fa-desktop" }
+                    ].map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
+                        <span className="text-gray-700">{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href={whatsappLinks.max}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800 focus:ring-indigo-500/50`}
+                  >
+                    📥 Send My App for Testing
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Bulk Plan */}
+              <Card className="pricing-card premium-gradient border-2 border-green-600 text-white relative floating-card">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-yellow-400 text-gray-900 px-6 py-2 text-sm font-bold">
+                    💎 ENTERPRISE
+                  </Badge>
+                </div>
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className="text-center mb-8">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                      <i className="fas fa-gem text-2xl text-yellow-300"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Bulk Purchase</h3>
+                    <div className="text-sm opacity-90 mb-4">(Advanced Plan)</div>
+                    <div className="mb-4">
+                      <div className="text-4xl font-bold mb-1">$34.99+</div>
+                      <div className="text-lg font-semibold text-yellow-300">৳4,374+</div>
+                    </div>
+                    <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+                      Best Value
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {[
+                      { text: "3+ Apps Testing", icon: "fas fa-layer-group" },
+                      { text: "App Size: Up to 500 MB", icon: "fas fa-expand-arrows-alt" },
+                      { text: "All Max Plan Features", icon: "fas fa-check-double" },
+                      { text: "Personalized Support", icon: "fas fa-user-tie" }
+                    ].map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <i className={`${feature.icon} text-yellow-300 mr-3 w-5`}></i>
+                        <span>{feature.text}</span>
+                      </li>
+                    ))}
+                    <li className="flex items-start pt-2 border-t border-white border-opacity-20">
+                      <i className="fas fa-gift text-yellow-300 mr-3 w-5 mt-1"></i>
+                      <span><strong className="text-yellow-300">BONUS:</strong> 1 Premium App Source Code</span>
+                    </li>
+                  </ul>
+                  
+                  <a 
+                    href={whatsappLinks.bulk}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-pink-600 via-pink-500 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 focus:ring-pink-500/50`}
+                  >
+                    🎯 Get Enterprise Testing
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Additional Trust Elements */}
+            <div className="mt-16 text-center">
+              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="flex items-center justify-center space-x-3">
+                  <i className="fas fa-shield-alt text-2xl text-green-600"></i>
+                  <span className="text-gray-700 font-semibold">Money-Back Guarantee</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <i className="fas fa-clock text-2xl text-blue-600"></i>
+                  <span className="text-gray-700 font-semibold">24/7 Support Available</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <i className="fas fa-users text-2xl text-purple-600"></i>
+                  <span className="text-gray-700 font-semibold">500+ Apps Approved</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Real Success Stories from <span className="text-blue-600">Happy Developers</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Join hundreds of developers who got their apps approved with our testing service
+              </p>
+              <div className="inline-flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full font-semibold">
+                <i className="fas fa-star"></i>
+                <span>4.9/5 Average Rating from 150+ Reviews</span>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  text: "Super easy and reliable. My app got approved on Play Store smoothly. The daily reports were incredibly detailed and helped me understand exactly what Google was looking for.",
+                  name: "James Rodriguez",
+                  role: "Mobile App Developer",
+                  company: "TechStart Inc.",
+                  rating: 5,
+                  appType: "Social Media App",
+                  approvalTime: "8 days",
+                  image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+                },
+                {
+                  text: "Great service. Daily activity updates were super helpful! After 3 rejections on my own, these guys got my gaming app approved in just 12 days.",
+                  name: "Emily Chen",
+                  role: "Indie Game Developer", 
+                  company: "PixelCraft Studios",
+                  rating: 5,
+                  appType: "Gaming App",
+                  approvalTime: "12 days",
+                  image: "https://images.unsplash.com/photo-1494790108755-2616b332c100?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+                },
+                {
+                  text: "I struggled before, but their 12 testers made my launch smooth. Professional service with real human feedback. Worth every penny for the peace of mind.",
+                  name: "Michael Thompson",
+                  role: "Startup Founder",
+                  company: "EduTech Solutions",
+                  rating: 5,
+                  appType: "Education App",
+                  approvalTime: "10 days",
+                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+                }
+              ].map((testimonial, index) => (
+                <Card key={index} className="testimonial-card p-8 h-full">
+                  <CardContent className="p-0 h-full flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-yellow-400 text-lg">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <i key={i} className="fas fa-star"></i>
+                        ))}
+                      </div>
+                      <Badge className="bg-green-100 text-green-800 text-xs">
+                        Approved in {testimonial.approvalTime}
+                      </Badge>
+                    </div>
+                    
+                    <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
+                      "{testimonial.text}"
+                    </p>
+                    
+                    <div className="mt-auto">
+                      <div className="mb-3">
+                        <div className="font-bold text-gray-900">{testimonial.name}</div>
+                        <div className="text-blue-600 text-sm font-semibold">{testimonial.role}</div>
+                        <div className="text-gray-500 text-xs">{testimonial.company}</div>
+                      </div>
+                      <div className="bg-gray-100 rounded-lg p-3 text-center">
+                        <div className="text-sm text-gray-600">App Category</div>
+                        <div className="font-semibold text-gray-800">{testimonial.appType}</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-16 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                  <div className="text-gray-600 text-sm">Apps Approved</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-2">99%</div>
+                  <div className="text-gray-600 text-sm">Success Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">24h</div>
+                  <div className="text-gray-600 text-sm">Quick Start</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-yellow-600 mb-2">4.9★</div>
+                  <div className="text-gray-600 text-sm">Average Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Urgency Section */}
+        <section className="py-16 lg:py-24 bg-gradient-to-r from-red-500 to-pink-600 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-black opacity-20"></div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="mb-8">
+              <Badge className="bg-yellow-400 text-red-600 px-6 py-3 text-lg font-bold pulse-animation mb-6 inline-block">
+                ⚠️ LIMITED TIME OFFER
+              </Badge>
+              <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+                Don't Let Google Reject Your App Again!
+              </h2>
+              <p className="text-xl lg:text-2xl mb-8 text-red-100">
+                Every day you wait, your competitors get ahead. Get approved NOW with our proven system.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl mb-2">⏰</div>
+                <div className="font-bold text-lg mb-2">Time is Money</div>
+                <div className="text-red-100 text-sm">Each rejection costs you weeks of development time</div>
+              </div>
+              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl mb-2">📉</div>
+                <div className="font-bold text-lg mb-2">Revenue Loss</div>
+                <div className="text-red-100 text-sm">Delayed launch = Lost users and revenue</div>
+              </div>
+              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl mb-2">🎯</div>
+                <div className="font-bold text-lg mb-2">99% Success Rate</div>
+                <div className="text-red-100 text-sm">Why risk it when we guarantee approval?</div>
+              </div>
+            </div>
+            
+            <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl p-8 text-gray-900 mb-8">
+              <h3 className="text-2xl font-bold mb-4 text-red-600">🔥 Special Launch Discount</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div>
+                  <div className="text-4xl font-bold text-green-600 mb-2">Save up to $23</div>
+                  <div className="text-gray-600">On all plans - Limited time only</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">48hr</div>
+                  <div className="text-gray-600">Express service available</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href={whatsappLinks.start}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${buttonBaseClasses} bg-gradient-to-r from-green-600 via-green-500 to-green-700 text-white hover:from-green-700 hover:to-green-800 focus:ring-green-500/50`}
+              >
+                Get Started NOW - Don't Wait!
+              </a>
               <button 
                 onClick={() => scrollToSection('pricing')}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center"
               >
-                Pricing
+                <i className="fas fa-flash mr-3"></i>View Limited Offers
               </button>
-              <button 
-                onClick={() => scrollToSection('faq')}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                FAQ
-              </button>
+            </div>
+            
+            <div className="mt-6 text-red-100">
+              <i className="fas fa-clock mr-2"></i>
+              <span className="text-sm">Offer expires soon - Secure your spot today!</span>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faq" className="py-16 lg:py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+              <p className="text-xl text-gray-600">Everything you need to know about our testing service</p>
+            </div>
+            
+            <div className="space-y-6">
+              {[
+                {
+                  id: "faq1",
+                  question: "Are the testers real people?",
+                  answer: "Yes, all our testers are real human beings with genuine Android devices. We do not use bots, emulators, or fake accounts. Each tester is verified and uses their personal device for testing."
+                },
+                {
+                  id: "faq2",
+                  question: "What if my app is rejected?",
+                  answer: "If your app gets rejected after our testing, we'll provide a detailed report and work with you to resolve the issues. We offer one free re-testing cycle if the rejection is related to testing requirements."
+                },
+                {
+                  id: "faq3",
+                  question: "How long before testing starts?",
+                  answer: "Testing begins within 2-4 hours after payment confirmation and receiving your closed testing link. Our testers are available 24/7 to ensure quick turnaround times."
+                },
+                {
+                  id: "faq4",
+                  question: "Will testers use emulators?",
+                  answer: "No, absolutely not. We strictly use real Android devices. Google Play can detect emulator usage, which could harm your app's approval chances. All our testers use their personal smartphones and tablets."
+                },
+                {
+                  id: "faq5",
+                  question: "Do I get refund if something goes wrong?",
+                  answer: "Yes, we offer a 100% money-back guarantee if we fail to complete the testing properly or if there are issues on our end. Your satisfaction and app's success are our top priorities."
+                },
+                {
+                  id: "faq6",
+                  question: "What payment methods do you accept?",
+                  answer: "Currently, we accept bKash Personal payments (01845978534). We're working on adding more payment options including international methods. Contact us for alternative payment arrangements."
+                }
+              ].map((faq) => (
+                <Card key={faq.id} className="bg-gray-50 overflow-hidden">
+                  <button 
+                    className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
+                    onClick={() => toggleFaq(faq.id)}
+                  >
+                    <span className="text-lg font-semibold text-gray-900">{faq.question}</span>
+                    <i className={`fas fa-chevron-down text-blue-600 transform transition-transform ${openFaq === faq.id ? 'rotate-180' : ''}`}></i>
+                  </button>
+                  {openFaq === faq.id && (
+                    <div className="px-8 py-6 border-t border-gray-200">
+                      <p className="text-gray-600">{faq.answer}</p>
+                    </div>
+                  )}
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Free PDF Lead Magnet Section */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <div className="text-6xl mb-6">🎁</div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                FREE PDF Guide: 7 Reasons Apps Get Rejected on Play Store
+              </h2>
+              <p className="text-xl mb-8 text-purple-100">
+                Learn the insider secrets to avoid common rejection reasons and get your app approved faster!
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-3xl mb-2">📋</div>
+                  <div className="font-semibold">Complete Checklist</div>
+                  <div className="text-purple-200 text-sm">Pre-submission guide</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🛠️</div>
+                  <div className="font-semibold">Fix Common Issues</div>
+                  <div className="text-purple-200 text-sm">Step-by-step solutions</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">⚡</div>
+                  <div className="font-semibold">Quick Approval Tips</div>
+                  <div className="text-purple-200 text-sm">Expert strategies</div>
+                </div>
+              </div>
+              
               <a 
                 href={whatsappLinks.general}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                className={`${buttonBaseClasses} bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 text-gray-900 hover:from-yellow-600 hover:to-yellow-700 focus:ring-yellow-500/50`}
               >
-                <i className="fab fa-whatsapp mr-2"></i>Contact
+                <i className="fas fa-download mr-3"></i>Get FREE PDF Guide Now
               </a>
+              <p className="text-purple-200 text-sm mt-4">No spam, just valuable insights to help your app succeed!</p>
             </div>
           </div>
-        </div>
-      </header>
+        </section>
 
-      {/* Hero Section */}
-      <section className="hero-gradient text-white py-16 lg:py-24 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-yellow-300 rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-400 rounded-full"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-6">
-                <Badge className="bg-green-600 text-white px-4 py-2 text-sm font-bold mb-4 inline-block pulse-animation">
-                  ✅ 500+ Apps Successfully Approved
-                </Badge>
-              </div>
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                ✅ Get Approved on <span className="text-yellow-300 underline decoration-wavy">Google Play</span> — 14 Days of Real Human Testing with 12 Devices
-              </h1>
-              <p className="text-xl lg:text-2xl mb-6 text-blue-100">
-                🚀 14 Days | 📱 12 Devices | 👥 Human Feedback | ⚡ Fast Setup
+        {/* Contact Section */}
+        <section className="py-16 lg:py-24 hero-gradient text-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-5xl font-bold mb-6">Ready to Get Your App Approved?</h2>
+              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+                Join 500+ successful developers who got their apps approved with our professional testing service.
+                24/7 support available - We're always here to help you succeed!
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-8 text-center">
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">99%</div>
-                  <div className="text-sm">Success Rate</div>
-                </div>
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-300">24h</div>
-                  <div className="text-sm">Quick Start</div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={whatsappLinks.start}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
-                  <i className="fab fa-whatsapp mr-3 text-xl"></i>Start Testing Now
-                </a>
-                <button 
-                  onClick={() => scrollToSection('pricing')}
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center"
-                >
-                  <i className="fas fa-tags mr-3"></i>View Pricing
-                </button>
-              </div>
-              <div className="mt-6 flex items-center text-blue-100">
-                <i className="fas fa-shield-alt mr-2"></i>
-                <span className="text-sm">100% Money-Back Guarantee • No Risk</span>
-              </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Multiple smartphones displaying app testing interface" 
-                className="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition-transform duration-300"
-              />
-              {/* Floating stats cards */}
-              <div className="absolute -bottom-6 -left-6 bg-green-600 text-white p-4 rounded-xl shadow-lg pulse-animation">
-                <div className="text-2xl font-bold">12</div>
-                <div className="text-sm">Real Testers</div>
-              </div>
-              <div className="absolute -top-6 -right-6 bg-yellow-400 text-blue-600 p-4 rounded-xl shadow-lg pulse-animation">
-                <div className="text-2xl font-bold">14</div>
-                <div className="text-sm">Days Testing</div>
-              </div>
-              <div className="absolute top-1/2 -left-4 bg-purple-600 text-white p-3 rounded-lg shadow-lg">
-                <div className="text-lg font-bold">✓</div>
-                <div className="text-xs">Approved</div>
-              </div>
-              {/* Floating testimonial */}
-              <div className="absolute bottom-16 -right-8 bg-white text-gray-800 p-4 rounded-lg shadow-xl max-w-xs">
-                <div className="flex items-center mb-2">
-                  <div className="flex text-yellow-400 text-sm">★★★★★</div>
-                </div>
-                <p className="text-sm italic">"Got approved in just 10 days!"</p>
-                <p className="text-xs text-gray-600 mt-1">- Sarah M., Developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* As Trusted By Section */}
-      <section className="py-12 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-gray-600 font-semibold mb-6">As Trusted By Leading App Development Communities</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-              <div className="flex items-center justify-center">
-                <div className="bg-gray-100 rounded-lg px-6 py-3">
-                  <span className="text-gray-700 font-semibold">📱 AppReviewers.net</span>
+            
+            <div className="hidden lg:grid lg:grid-cols-2 gap-8">
+              <div className="rounded-2xl border text-card-foreground shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-white/20 hover:border-white/30 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="p-8 text-center">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 hover:rotate-6 transition-transform">
+                    <i className="fab fa-whatsapp text-3xl text-white"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">WhatsApp Support</h3>
+                  <p className="mb-8 text-gray-200 text-lg">Get instant support, place orders, and track your testing progress</p>
+                  <a 
+                    href={whatsappLinks.help}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 text-gray-900 hover:from-yellow-600 hover:to-yellow-700 focus:ring-yellow-500/50`}
+                  >
+                    Chat Now: +8801845978534
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="bg-gray-100 rounded-lg px-6 py-3">
-                  <span className="text-gray-700 font-semibold">⚡ DevStack</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="bg-gray-100 rounded-lg px-6 py-3">
-                  <span className="text-gray-700 font-semibold">🚀 PlayBetaHub</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="bg-gray-100 rounded-lg px-6 py-3">
-                  <span className="text-gray-700 font-semibold">📲 TestMyApp</span>
+              
+              <div className="rounded-2xl border text-card-foreground shadow-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-white/20 hover:border-white/30 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="p-8 text-center">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3 hover:-rotate-6 transition-transform">
+                    <i className="fas fa-envelope text-3xl text-white"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Email Support</h3>
+                  <p className="mb-8 text-gray-200 text-lg">Send detailed inquiries, technical questions, or bulk order requests</p>
+                  <a 
+                    href="mailto:contact@codelagbe.store" 
+                    className={`${buttonBaseClasses} bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 focus:ring-blue-500/50`}
+                  >
+                    <i className="fas fa-envelope mr-3"></i>contact@codelagbe.store
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">How It Works</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Simple 4-step process to get your app approved on Google Play Store</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: 1,
-                title: "Place Order",
-                description: "Pay via bKash and choose your testing plan",
-                icon: "fas fa-credit-card",
-                color: "bg-blue-600"
-              },
-              {
-                step: 2,
-                title: "Get Tester Emails",
-                description: "Receive 12 real tester email addresses",
-                icon: "fas fa-envelope",
-                color: "bg-blue-600"
-              },
-              {
-                step: 3,
-                title: "Submit Testing Link",
-                description: "Share your closed testing link with us",
-                icon: "fas fa-link",
-                color: "bg-blue-600"
-              },
-              {
-                step: 4,
-                title: "App Gets Approved",
-                description: "Your app passes Google Play requirements",
-                icon: "fas fa-check-circle",
-                color: "bg-green-600"
-              }
-            ].map((item) => (
-              <div key={item.step} className="text-center group">
-                <div className={`${item.color} text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform`}>
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <i className={`${item.icon} text-3xl ${item.step === 4 ? 'text-green-600' : 'text-blue-600'}`}></i>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">The most reliable app testing service for Google Play Store approval</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "fas fa-users",
-                title: "12 Real Human Testers",
-                description: "Genuine users with real devices, not bots or emulators",
-                color: "text-blue-600"
-              },
-              {
-                icon: "fas fa-calendar-alt",
-                title: "14-Day Full Testing",
-                description: "All app pages tested daily for complete coverage",
-                color: "text-blue-600"
-              },
-              {
-                icon: "fas fa-chart-line",
-                title: "Daily Reports",
-                description: "Receive progress updates and testing activity reports",
-                color: "text-blue-600"
-              },
-              {
-                icon: "fas fa-mobile-alt",
-                title: "Device Compatibility",
-                description: "Testing across multiple Android devices and versions",
-                color: "text-blue-600"
-              },
-              {
-                icon: "fas fa-hand-paper",
-                title: "100% Manual Testing",
-                description: "No automation - real human interaction with your app",
-                color: "text-blue-600"
-              },
-              {
-                icon: "fas fa-money-bill-wave",
-                title: "Money-Back Guarantee",
-                description: "Full refund if testing is not completed properly",
-                color: "text-green-600"
-              }
-            ].map((feature, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-shadow">
-                <CardContent className="p-0">
-                  <div className={`${feature.color} text-4xl mb-4`}>
-                    <i className={feature.icon}></i>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Choose Your <span className="text-blue-600">Perfect Plan</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-              Transparent pricing with no hidden fees. Get your app approved faster than ever!
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold">
-                <i className="fas fa-shield-alt"></i>
-                <span>100% Money-Back Guarantee</span>
-              </div>
-              <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-semibold">
-                <i className="fas fa-tags"></i>
-                <span>💸 Save up to 50% vs Other Services</span>
-              </div>
-              <div className="inline-flex items-center space-x-2 bg-purple-100 text-purple-800 px-6 py-3 rounded-full font-semibold">
-                <i className="fas fa-ban"></i>
-                <span>No Hidden Monthly Fees</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Basic Plan */}
-            <Card className="pricing-card border-2 border-gray-200 hover:border-blue-600 transition-all duration-300 bg-white">
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i className="fas fa-rocket text-2xl text-blue-600"></i>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Basic Plan</h3>
-                  <div className="mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-1">$19.99</div>
-                    <div className="text-lg text-gray-500 line-through mb-1">$29.99</div>
-                    <div className="text-lg font-semibold text-green-600">৳2,499</div>
-                  </div>
-                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
-                    Save $10
-                  </div>
-                </div>
-                
-                <ul className="space-y-4 mb-8 flex-grow">
-                  {[
-                    { text: "App Size: 1 TO 50 MB", icon: "fas fa-mobile-alt" },
-                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
-                    { text: "12 Real Testers", icon: "fas fa-users" },
-                    { text: "Full App Testing", icon: "fas fa-check-circle" }
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
-                      <span className="text-gray-700">{feature.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <a 
-                  href={whatsappLinks.basic}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i>🔍 I Want This Plan
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Pro Plan */}
-            <Card className="pricing-card border-2 border-blue-600 relative bg-white floating-card">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-blue-600 text-white px-6 py-2 text-sm font-bold pulse-animation">
-                  🔥 MOST POPULAR
-                </Badge>
-              </div>
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 feature-icon-bg rounded-full flex items-center justify-center">
-                    <i className="fas fa-star text-2xl text-white"></i>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Pro Plan</h3>
-                  <div className="mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-1">$23.99</div>
-                    <div className="text-lg text-gray-500 line-through mb-1">$39.99</div>
-                    <div className="text-lg font-semibold text-green-600">৳2,999</div>
-                  </div>
-                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
-                    Save $16
-                  </div>
-                </div>
-                
-                <ul className="space-y-4 mb-8 flex-grow">
-                  {[
-                    { text: "App Size: 1 TO 150 MB", icon: "fas fa-mobile-alt" },
-                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
-                    { text: "12 Real Testers", icon: "fas fa-users" },
-                    { text: "Full App Testing", icon: "fas fa-check-circle" },
-                    { text: "Support via AnyDesk", icon: "fas fa-desktop" },
-                    { text: "Bug Report", icon: "fas fa-bug" }
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
-                      <span className="text-gray-700">{feature.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <a 
-                  href={whatsappLinks.pro}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i>🚀 Get 14-Day Testing Now
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Max Plan */}
-            <Card className="pricing-card border-2 border-gray-200 hover:border-purple-600 transition-all duration-300 bg-white">
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                    <i className="fas fa-crown text-2xl text-purple-600"></i>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Max Plan</h3>
-                  <div className="mb-4">
-                    <div className="text-4xl font-bold text-purple-600 mb-1">$26.99</div>
-                    <div className="text-lg text-gray-500 line-through mb-1">$49.99</div>
-                    <div className="text-lg font-semibold text-green-600">৳3,374</div>
-                  </div>
-                  <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
-                    Save $23
-                  </div>
-                </div>
-                
-                <ul className="space-y-4 mb-8 flex-grow">
-                  {[
-                    { text: "App Size: 1 TO 250 MB", icon: "fas fa-mobile-alt" },
-                    { text: "14 Day Testing", icon: "fas fa-calendar-check" },
-                    { text: "12 Real Testers", icon: "fas fa-users" },
-                    { text: "Full App Testing", icon: "fas fa-check-circle" },
-                    { text: "Additional Support", icon: "fas fa-headset" },
-                    { text: "Bug Report", icon: "fas fa-bug" },
-                    { text: "AnyDesk Help", icon: "fas fa-desktop" }
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <i className={`${feature.icon} text-green-600 mr-3 w-5`}></i>
-                      <span className="text-gray-700">{feature.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <a 
-                  href={whatsappLinks.max}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i>📥 Send My App for Testing
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Bulk Plan */}
-            <Card className="pricing-card premium-gradient border-2 border-green-600 text-white relative floating-card">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-yellow-400 text-gray-900 px-6 py-2 text-sm font-bold">
-                  💎 ENTERPRISE
-                </Badge>
-              </div>
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                    <i className="fas fa-gem text-2xl text-yellow-300"></i>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Bulk Purchase</h3>
-                  <div className="text-sm opacity-90 mb-4">(Advanced Plan)</div>
-                  <div className="mb-4">
-                    <div className="text-4xl font-bold mb-1">$34.99+</div>
-                    <div className="text-lg font-semibold text-yellow-300">৳4,374+</div>
-                  </div>
-                  <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
-                    Best Value
-                  </div>
-                </div>
-                
-                <ul className="space-y-4 mb-8 flex-grow">
-                  {[
-                    { text: "3+ Apps Testing", icon: "fas fa-layer-group" },
-                    { text: "App Size: Up to 500 MB", icon: "fas fa-expand-arrows-alt" },
-                    { text: "All Max Plan Features", icon: "fas fa-check-double" },
-                    { text: "Personalized Support", icon: "fas fa-user-tie" }
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <i className={`${feature.icon} text-yellow-300 mr-3 w-5`}></i>
-                      <span>{feature.text}</span>
-                    </li>
-                  ))}
-                  <li className="flex items-start pt-2 border-t border-white border-opacity-20">
-                    <i className="fas fa-gift text-yellow-300 mr-3 w-5 mt-1"></i>
-                    <span><strong className="text-yellow-300">BONUS:</strong> 1 Premium App Source Code</span>
+        {/* Footer */}
+        <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Quick Links</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#features" className="text-gray-300 hover:text-white transition-colors duration-300">Features</a>
+                  </li>
+                  <li>
+                    <a href="#pricing" className="text-gray-300 hover:text-white transition-colors duration-300">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="#faq" className="text-gray-300 hover:text-white transition-colors duration-300">FAQ</a>
                   </li>
                 </ul>
-                
-                <a 
-                  href={whatsappLinks.bulk}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-white text-purple-600 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <i className="fab fa-whatsapp mr-2 text-xl"></i>🎯 Get Enterprise Testing
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Additional Trust Elements */}
-          <div className="mt-16 text-center">
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-3">
-                <i className="fas fa-shield-alt text-2xl text-green-600"></i>
-                <span className="text-gray-700 font-semibold">Money-Back Guarantee</span>
               </div>
-              <div className="flex items-center justify-center space-x-3">
-                <i className="fas fa-clock text-2xl text-blue-600"></i>
-                <span className="text-gray-700 font-semibold">24/7 Support Available</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <i className="fas fa-users text-2xl text-purple-600"></i>
-                <span className="text-gray-700 font-semibold">500+ Apps Approved</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Real Success Stories from <span className="text-blue-600">Happy Developers</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Join hundreds of developers who got their apps approved with our testing service
-            </p>
-            <div className="inline-flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full font-semibold">
-              <i className="fas fa-star"></i>
-              <span>4.9/5 Average Rating from 150+ Reviews</span>
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Super easy and reliable. My app got approved on Play Store smoothly. The daily reports were incredibly detailed and helped me understand exactly what Google was looking for.",
-                name: "James Rodriguez",
-                role: "Mobile App Developer",
-                company: "TechStart Inc.",
-                rating: 5,
-                appType: "Social Media App",
-                approvalTime: "8 days",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-              },
-              {
-                text: "Great service. Daily activity updates were super helpful! After 3 rejections on my own, these guys got my gaming app approved in just 12 days.",
-                name: "Emily Chen",
-                role: "Indie Game Developer", 
-                company: "PixelCraft Studios",
-                rating: 5,
-                appType: "Gaming App",
-                approvalTime: "12 days",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b332c100?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-              },
-              {
-                text: "I struggled before, but their 12 testers made my launch smooth. Professional service with real human feedback. Worth every penny for the peace of mind.",
-                name: "Michael Thompson",
-                role: "Startup Founder",
-                company: "EduTech Solutions",
-                rating: 5,
-                appType: "Education App",
-                approvalTime: "10 days",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="testimonial-card p-8 h-full">
-                <CardContent className="p-0 h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-yellow-400 text-lg">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <i key={i} className="fas fa-star"></i>
-                      ))}
-                    </div>
-                    <Badge className="bg-green-100 text-green-800 text-xs">
-                      Approved in {testimonial.approvalTime}
-                    </Badge>
-                  </div>
-                  
-                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
-                    "{testimonial.text}"
-                  </p>
-                  
-                  <div className="mt-auto">
-                    <div className="mb-3">
-                      <div className="font-bold text-gray-900">{testimonial.name}</div>
-                      <div className="text-blue-600 text-sm font-semibold">{testimonial.role}</div>
-                      <div className="text-gray-500 text-xs">{testimonial.company}</div>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg p-3 text-center">
-                      <div className="text-sm text-gray-600">App Category</div>
-                      <div className="font-semibold text-gray-800">{testimonial.appType}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Trust indicators */}
-          <div className="mt-16 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-gray-600 text-sm">Apps Approved</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">99%</div>
-                <div className="text-gray-600 text-sm">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">24h</div>
-                <div className="text-gray-600 text-sm">Quick Start</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-600 mb-2">4.9★</div>
-                <div className="text-gray-600 text-sm">Average Rating</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Urgency Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-red-500 to-pink-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="mb-8">
-            <Badge className="bg-yellow-400 text-red-600 px-6 py-3 text-lg font-bold pulse-animation mb-6 inline-block">
-              ⚠️ LIMITED TIME OFFER
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-              Don't Let Google Reject Your App Again!
-            </h2>
-            <p className="text-xl lg:text-2xl mb-8 text-red-100">
-              Every day you wait, your competitors get ahead. Get approved NOW with our proven system.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
-              <div className="text-3xl mb-2">⏰</div>
-              <div className="font-bold text-lg mb-2">Time is Money</div>
-              <div className="text-red-100 text-sm">Each rejection costs you weeks of development time</div>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
-              <div className="text-3xl mb-2">📉</div>
-              <div className="font-bold text-lg mb-2">Revenue Loss</div>
-              <div className="text-red-100 text-sm">Delayed launch = Lost users and revenue</div>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
-              <div className="text-3xl mb-2">🎯</div>
-              <div className="font-bold text-lg mb-2">99% Success Rate</div>
-              <div className="text-red-100 text-sm">Why risk it when we guarantee approval?</div>
-            </div>
-          </div>
-          
-          <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl p-8 text-gray-900 mb-8">
-            <h3 className="text-2xl font-bold mb-4 text-red-600">🔥 Special Launch Discount</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
+              
+              {/* Contact */}
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">Save up to $23</div>
-                <div className="text-gray-600">On all plans - Limited time only</div>
+                <h4 className="text-xl font-bold mb-6 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Contact</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-gray-300">
+                    <i className="fas fa-envelope mr-3 text-green-500"></i>
+                    contact@codelagbe.store
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <i className="fab fa-whatsapp mr-3 text-green-500"></i>
+                    +8801845978534
+                  </li>
+                </ul>
               </div>
+              
+              {/* Follow Us */}
               <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">48hr</div>
-                <div className="text-gray-600">Express service available</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href={whatsappLinks.start}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <i className="fab fa-whatsapp mr-3 text-xl"></i>Get Started NOW - Don't Wait!
-            </a>
-            <button 
-              onClick={() => scrollToSection('pricing')}
-              className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-300 transition-all duration-300 inline-flex items-center justify-center"
-            >
-              <i className="fas fa-flash mr-3"></i>View Limited Offers
-            </button>
-          </div>
-          
-          <div className="mt-6 text-red-100">
-            <i className="fas fa-clock mr-2"></i>
-            <span className="text-sm">Offer expires soon - Secure your spot today!</span>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="py-16 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Everything you need to know about our testing service</p>
-          </div>
-          
-          <div className="space-y-6">
-            {[
-              {
-                id: "faq1",
-                question: "Are the testers real people?",
-                answer: "Yes, all our testers are real human beings with genuine Android devices. We do not use bots, emulators, or fake accounts. Each tester is verified and uses their personal device for testing."
-              },
-              {
-                id: "faq2",
-                question: "What if my app is rejected?",
-                answer: "If your app gets rejected after our testing, we'll provide a detailed report and work with you to resolve the issues. We offer one free re-testing cycle if the rejection is related to testing requirements."
-              },
-              {
-                id: "faq3",
-                question: "How long before testing starts?",
-                answer: "Testing begins within 2-4 hours after payment confirmation and receiving your closed testing link. Our testers are available 24/7 to ensure quick turnaround times."
-              },
-              {
-                id: "faq4",
-                question: "Will testers use emulators?",
-                answer: "No, absolutely not. We strictly use real Android devices. Google Play can detect emulator usage, which could harm your app's approval chances. All our testers use their personal smartphones and tablets."
-              },
-              {
-                id: "faq5",
-                question: "Do I get refund if something goes wrong?",
-                answer: "Yes, we offer a 100% money-back guarantee if we fail to complete the testing properly or if there are issues on our end. Your satisfaction and app's success are our top priorities."
-              },
-              {
-                id: "faq6",
-                question: "What payment methods do you accept?",
-                answer: "Currently, we accept bKash Personal payments (01845978534). We're working on adding more payment options including international methods. Contact us for alternative payment arrangements."
-              }
-            ].map((faq) => (
-              <Card key={faq.id} className="bg-gray-50 overflow-hidden">
-                <button 
-                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-                  onClick={() => toggleFaq(faq.id)}
-                >
-                  <span className="text-lg font-semibold text-gray-900">{faq.question}</span>
-                  <i className={`fas fa-chevron-down text-blue-600 transform transition-transform ${openFaq === faq.id ? 'rotate-180' : ''}`}></i>
-                </button>
-                {openFaq === faq.id && (
-                  <div className="px-8 py-6 border-t border-gray-200">
-                    <p className="text-gray-600">{faq.answer}</p>
+                <h4 className="text-xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Payment Methods</h4>
+                <p className="text-gray-300 mb-4">We accept the following payment methods</p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <i className="fas fa-mobile-alt text-xl text-green-500"></i>
+                    <span className="ml-2 text-sm font-semibold">bKash</span>
                   </div>
-                )}
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Free PDF Lead Magnet Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <div className="text-6xl mb-6">🎁</div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              FREE PDF Guide: 7 Reasons Apps Get Rejected on Play Store
-            </h2>
-            <p className="text-xl mb-8 text-purple-100">
-              Learn the insider secrets to avoid common rejection reasons and get your app approved faster!
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="text-3xl mb-2">📋</div>
-                <div className="font-semibold">Complete Checklist</div>
-                <div className="text-purple-200 text-sm">Pre-submission guide</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-2">🛠️</div>
-                <div className="font-semibold">Fix Common Issues</div>
-                <div className="text-purple-200 text-sm">Step-by-step solutions</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-2">⚡</div>
-                <div className="font-semibold">Quick Approval Tips</div>
-                <div className="text-purple-200 text-sm">Expert strategies</div>
-              </div>
-            </div>
-            
-            <a 
-              href={whatsappLinks.general}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-300 transition-colors inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <i className="fas fa-download mr-3"></i>Get FREE PDF Guide Now
-            </a>
-            <p className="text-purple-200 text-sm mt-4">No spam, just valuable insights to help your app succeed!</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 lg:py-24 hero-gradient text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6">Ready to Get Your App Approved?</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Join 500+ successful developers who got their apps approved with our professional testing service.
-              24/7 support available - We're always here to help you succeed!
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="fab fa-whatsapp text-2xl"></i>
+                  <div className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <i className="fas fa-credit-card text-xl text-blue-500"></i>
+                    <span className="ml-2 text-sm font-semibold">Card</span>
+                  </div>
+                  <div className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-all duration-300 transform hover:scale-110">
+                    <i className="fab fa-bitcoin text-xl text-yellow-500"></i>
+                    <span className="ml-2 text-sm font-semibold">Crypto</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">WhatsApp Support</h3>
-                <p className="mb-6 text-blue-100">Get instant support, place orders, and track your testing progress</p>
-                <a 
-                  href={whatsappLinks.help}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors inline-flex items-center justify-center w-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
-                  <i className="fab fa-whatsapp mr-3 text-xl"></i>Chat Now: +8801845978534
-                </a>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="fas fa-envelope text-2xl"></i>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Email Support</h3>
-                <p className="mb-6 text-blue-100">Send detailed inquiries, technical questions, or bulk order requests</p>
-                <a 
-                  href="mailto:contact@codelagbe.store" 
-                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center w-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
-                  <i className="fas fa-envelope mr-3"></i>contact@codelagbe.store
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="fas fa-mobile-alt text-2xl text-gray-900"></i>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Quick Payment</h3>
-                <p className="mb-6 text-blue-100">Fast and secure bKash payments. Get started within minutes!</p>
-                <div className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
-                  <i className="fas fa-credit-card mr-3"></i>bKash: 01845978534
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Brand */}
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center space-x-2 mb-4">
-                <i className="fas fa-mobile-alt text-2xl text-blue-600"></i>
-                <h3 className="text-xl font-bold">12 App Testers</h3>
-              </div>
-              <p className="text-gray-400">Professional app testing service for Google Play Store approval with real human testers.</p>
-            </div>
-            
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><button onClick={() => scrollToSection('pricing')} className="text-gray-400 hover:text-white transition-colors">Pricing</button></li>
-                <li><button onClick={() => scrollToSection('faq')} className="text-gray-400 hover:text-white transition-colors">FAQ</button></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-              </ul>
-            </div>
-            
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2">
-                <li className="text-gray-400">
-                  <i className="fab fa-whatsapp mr-2"></i>+8801845978534
-                </li>
-                <li className="text-gray-400">
-                  <i className="fas fa-envelope mr-2"></i>contact@codelagbe.store
-                </li>
-                <li className="text-gray-400">
-                  <i className="fas fa-globe mr-2"></i>12apptesters.codelagbe.store
-                </li>
-              </ul>
-            </div>
-            
-            {/* Social Media */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white text-2xl transition-colors">
-                  <i className="fab fa-facebook"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl transition-colors">
-                  <i className="fab fa-youtube"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl transition-colors">
-                  <i className="fab fa-linkedin"></i>
-                </a>
               </div>
             </div>
-          </div>
-          
-          {/* Bottom Footer */}
-          <div className="border-t border-gray-800 pt-8">
-            <div className="text-center text-gray-400">
-              <p className="mb-2">12AppTesters is an independent third-party service. We are not affiliated with Google LLC.</p>
-              <p>&copy; 2024 12 App Testers. All rights reserved.</p>
+            
+            <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+              <p className="text-gray-400">&copy; {new Date().getFullYear()} CodeLagbe. All rights reserved.</p>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
 
-      {/* Sticky WhatsApp Button */}
-      <a
-        href={whatsappLinks.help}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50 pulse-animation"
-        aria-label="WhatsApp Support"
-      >
-        <i className="fab fa-whatsapp text-2xl"></i>
-      </a>
-    </div>
+        {/* Sticky WhatsApp Button */}
+        <a
+          href={whatsappLinks.help}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50 pulse-animation"
+          aria-label="WhatsApp Support"
+        >
+          <i className="fab fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+    </>
   );
 }
