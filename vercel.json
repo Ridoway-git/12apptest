@@ -6,8 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "installCommand": "npm install",
-        "buildCommand": "npm run build",
-        "outputDirectory": "build/public"
+        "buildCommand": "npm run build"
       }
     },
     {
@@ -22,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "build/public/$1"
+      "dest": "public/$1"
     }
   ]
 } 
